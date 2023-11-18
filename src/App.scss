@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat+Subrayada:wght@700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+$dark: #ffa500;
+$light: #008080;
+$medium: #e0ffff;
+//
+$second: #a5121f;
+$primary: #f58224;
+$nav: #f2f2f2;
+$CP: #2e86ab;
+$cs: #ab2e2e;
+$ap: #f5dd24;
+$as: #1fa52f;
+$lightGrey: #c0c0c0;
+$darckGrey: #333333;
+$background: #fdf5ed;
+$gr: #c47843;
+//
+// global
+//
+$rightBack: #1b1c31;
+$leftBack: #222338;
+$blueBack: #222338;
+$dashLime: #00ffc38e;
+$tableDark: #1d3442;
+$tableLight: #26424f;
+//
+// global
+//
+h2 {
+  color: $primary;
+  font-size: 35px;
+}
+//
+// mixins
+//
+$breack-up: (
+  "small": "600px",
+  "medium": "1164px",
+);
+$breack-down: (
+  "medium": "599px",
+  "large": "1163px",
+);
+
+@mixin breack_up($size) {
+  @media (min-width: map-get($breack-up, $size)) {
+    @content;
+  }
+}
+@mixin breack_down($size) {
+  @media (max-width: map-get($breack-down, $size)) {
+    @content;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

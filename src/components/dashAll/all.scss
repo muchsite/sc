@@ -1,0 +1,76 @@
+@use "../../App.scss" as *;
+.all_courses_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.all_courses_content {
+  width: 80vw;
+  @include breack_down(large) {
+    width: 98vw;
+  }
+  .couses_head {
+    display: flex;
+    color: #fff;
+    @include breack_down(medium) {
+      display: none !important;
+    }
+    p {
+      background-color: $tableDark;
+      width: 21.25%;
+
+      padding: 10px;
+    }
+  }
+}
+
+.couses_row {
+  display: flex;
+  color: #fff;
+  width: 100%;
+  text-decoration: none;
+  @include breack_down(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .couse_cell {
+    width: 21.25%;
+    @include breack_down(medium) {
+      width: auto;
+    }
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+.course_row_light {
+  background-color: $tableLight;
+  transition: 0.5s;
+  &:hover {
+    background-color: rgb(5, 6, 58);
+  }
+}
+.course_row_dark {
+  background-color: $tableDark;
+  transition: 0.5s;
+  &:hover {
+    background-color: rgb(5, 6, 58);
+  }
+}
+.row_id {
+  width: 5% !important;
+}
+.row_image {
+  width: 10% !important;
+}

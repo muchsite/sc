@@ -1,0 +1,138 @@
+@use "../../App.scss" as *;
+.dash_cont {
+  background: $rightBack;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .dash_side {
+    flex-shrink: 0;
+    background-color: $leftBack;
+    width: 16vw;
+    @include breack_down(large) {
+      position: fixed;
+      left: 100%;
+      transition: 0.5s;
+      z-index: 100;
+      width: 100%;
+    }
+    .pos_fixed {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5rem;
+      width: 16vw;
+      background-color: $leftBack;
+      height: 100%;
+      @include breack_down(large) {
+        width: 100%;
+      }
+    }
+  }
+}
+.dahs_links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  .dash_link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    padding: 16px;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.6s;
+    &:hover {
+      background-color: $dashLime;
+      color: #fff;
+    }
+  }
+  .active_dash_link {
+    background: linear-gradient(to right, #1566fd21, #00ffc38e);
+    color: #15bffd;
+  }
+}
+.dash_head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 1.2rem;
+  gap: 1.2rem;
+  img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  .dash_header_profile {
+    border-radius: 50%;
+  }
+  .not_bell_container {
+    position: relative;
+    cursor: pointer;
+    p {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #ff5630;
+      border-radius: 50%;
+      color: #ffff;
+      font-size: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.dash_right {
+  width: 100%;
+  overflow: hidden;
+}
+.dah_open {
+  left: 0 !important;
+}
+.dash_ham {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  img {
+    width: 3rem;
+    cursor: pointer;
+    filter: invert(80%) sepia(48%) saturate(4362%) hue-rotate(106deg)
+      brightness(103%) contrast(101%);
+  }
+}
+.dash_logo_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  .dash_logo {
+    // padding: 2rem 1rem;
+    width: 80%;
+    @include breack_down(large) {
+      width: 60%;
+    }
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+  .dash_close {
+    width: 3rem;
+    cursor: pointer;
+    filter: invert(80%) sepia(48%) saturate(4362%) hue-rotate(106deg)
+      brightness(103%) contrast(101%);
+
+    @include breack_up(medium) {
+      display: none !important;
+    }
+  }
+}
