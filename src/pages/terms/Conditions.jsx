@@ -2,9 +2,10 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import React, { useState, useEffect } from "react";
 import Loading from "../../components/loading/Loading";
-
+import { useMainContext } from "../../utils/context";
 import "./privacy.scss";
 const Conditions = () => {
+  const {} = useMainContext();
   const [privacy_policies, setprivacy_policies] = useState({});
   const [refund, setrefund] = useState({});
   const [terms_and_conditions, setterms_and_conditions] = useState({});
@@ -15,7 +16,7 @@ const Conditions = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `${"https://growklasdklfjkl.co.in" + "/otherpages"}`
+          `${"https://euijkladsfiuoqew.in/api/otherpages/"}`
         );
         const p = DOMPurify.sanitize(res.data[0].privacy_policies);
         setprivacy_policies(p);
