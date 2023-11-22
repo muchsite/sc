@@ -1,6 +1,12 @@
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  HashRouter,
+} from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "./App.scss";
 import DashHome from "./components/dashHome/DashHome";
@@ -17,6 +23,7 @@ import Privacy from "./pages/terms/Privacy";
 import Conditions from "./pages/terms/Conditions";
 import Refund from "./pages/terms/Refund";
 import Footer from "./components/footer/Footer";
+import About from "./pages/about/About";
 
 function App() {
   useEffect(() => {
@@ -32,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CreateMainContext>
         <ParallaxProvider>
           <NavBar />
@@ -42,6 +49,7 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Conditions />} />
             <Route path="/refund" element={<Refund />} />
+            <Route path="/about" element={<About />} />
             <Route path="/dashboard/:role/:id" element={<DashOutlet />}>
               <Route path="home" element={<DashHome />} />
               <Route path="profile" element={<DashProfile />} />
@@ -56,7 +64,7 @@ function App() {
           <Footer />
         </ParallaxProvider>
       </CreateMainContext>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
