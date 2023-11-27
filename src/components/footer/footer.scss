@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   color: #fff;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
   gap: 3rem;
   @include breack_down(large) {
     flex-direction: column;
@@ -19,6 +19,13 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .f_icons_div {
+      display: flex;
+      gap: 10px;
+      svg {
+        flex-shrink: 0;
+      }
+    }
     @include breack_down(large) {
       width: auto;
     }
@@ -40,9 +47,12 @@
   .footer_social {
     display: flex;
     gap: 1rem;
+    text-decoration: none;
+    color: #fff;
     svg {
-      width: 3rem;
-      height: 3rem;
+      color: #fff;
+      width: 2rem;
+      height: 2rem;
       cursor: pointer;
       transition: 0.3s;
       &:hover {

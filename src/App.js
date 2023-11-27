@@ -1,12 +1,6 @@
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  HashRouter,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "./App.scss";
 import DashHome from "./components/dashHome/DashHome";
@@ -26,6 +20,9 @@ import Footer from "./components/footer/Footer";
 import About from "./pages/about/About";
 import CoursesAll from "./pages/courses/CoursesAll";
 import EventsAll from "./pages/events/EventsAll";
+import RetreatAll from "./pages/retreat/RetreatAll";
+import Contact from "./pages/contact/Contact";
+import CourseOne from "./pages/courses/CourseOne";
 
 function App() {
   useEffect(() => {
@@ -41,14 +38,17 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CreateMainContext>
         <ParallaxProvider>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<CoursesAll />} />
+            <Route path="/courses/:courseID" element={<CourseOne />} />
             <Route path="/events" element={<EventsAll />} />
+            <Route path="/retreat" element={<RetreatAll />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<LogIn />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Conditions />} />
@@ -68,7 +68,7 @@ function App() {
           <Footer />
         </ParallaxProvider>
       </CreateMainContext>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
