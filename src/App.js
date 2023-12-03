@@ -1,6 +1,12 @@
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  HashRouter,
+} from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "./App.scss";
 import DashHome from "./components/dashHome/DashHome";
@@ -40,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CreateMainContext>
         <ParallaxProvider>
           <NavBar />
@@ -72,7 +78,7 @@ function App() {
           <Footer />
         </ParallaxProvider>
       </CreateMainContext>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
